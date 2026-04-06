@@ -53,7 +53,7 @@ A steelman that finds no problems is a **validated analysis**, not a failed stee
 
 ```bash
 # Clone into Claude Code's skills directory
-git clone https://github.com/bogdanstate/steelman-skill.git ~/.claude/skills/steelman
+git clone https://github.com/Bobby-cell-commits/steelman-skill.git ~/.claude/skills/steelman
 ```
 
 Restart Claude Code after installing.
