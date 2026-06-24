@@ -28,7 +28,8 @@ echo "=== prepare_run_dir.sh ==="
 RUN_DIR="$(bash "$HELPER")"
 assert_eq "prints a path" "$([ -n "$RUN_DIR" ] && echo yes || echo no)" "yes"
 assert_eq "dir exists" "$([ -d "$RUN_DIR" ] && echo yes || echo no)" "yes"
-assert_eq "perms are 700" "$(stat -c '%a' "$RUN_DIR")" "700"
+# Permission read is portable: BSD/macOS `stat -f`, GNU/Linux `stat -c`.
+assert_eq "perms are 700" "$(stat -f '%Lp' "$RUN_DIR" 2>/dev/null || stat -c '%a' "$RUN_DIR")" "700"
 
 # Files written into the dir land (sanity: it is writable).
 echo "x" > "$RUN_DIR/analysis.md"
