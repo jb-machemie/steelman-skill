@@ -95,7 +95,7 @@ Initial release.
 
 ```bash
 # Clone into Claude Code's skills directory
-git clone https://github.com/Bobby-cell-commits/steelman-skill.git ~/.claude/skills/steelman
+git clone https://github.com/jb-machemie/steelman-skill.git ~/.claude/skills/steelman
 ```
 
 Restart Claude Code after installing.
